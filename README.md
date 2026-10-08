@@ -79,12 +79,11 @@ Desenvolver uma aplicação web para gerenciamento e acompanhamento de treinos d
 
 ### Requisitos não funcionais
 
-*Informe restrições de qualidade, quando existirem.*
-
-- **Desempenho:** [Ex.: respostas da API em menos de 2 segundos]
-- **Segurança:** [Ex.: senhas armazenadas com hash; HTTPS em produção]
-- **Usabilidade:** [Ex.: interface responsiva para desktop e celular]
-- **Disponibilidade:** [Ex.: uso em ambiente local / laboratório da disciplina]
+- **Segurança:** senhas e informações sensíveis deverão ser protegidas e credenciais não deverão ser versionadas no GitHub.
+- **Usabilidade:** a interface deverá ser simples, intuitiva e responsiva.
+- **Compatibilidade:** a aplicação deverá funcionar em navegadores modernos em computadores e dispositivos móveis.
+- **Disponibilidade:** a aplicação deverá permanecer disponível na Internet durante o período de avaliação.
+- **Manutenibilidade:** o código deverá seguir uma organização compatível com as boas práticas do Django.
 
 ---
 
@@ -105,17 +104,15 @@ Desenvolver uma aplicação web para gerenciamento e acompanhamento de treinos d
 
 ## 4. Tecnologias utilizadas
 
-*Informe as tecnologias de fato usadas no projeto. Remova as linhas que não se aplicarem.*
-
-| Camada | Tecnologia | Versão |
-| --- | --- | --- |
-| Linguagem | [Ex.: Python, Java, TypeScript] | [Ex.: 3.12] |
-| Frontend | [Ex.: HTML, CSS, React] | [Ex.: 18] |
-| Backend | [Ex.: Flask, Spring Boot, Node.js] | [Ex.: 3.x] |
-| Banco de dados | [Ex.: PostgreSQL, SQLite, MongoDB] | [Ex.: 16] |
-| Testes | [Ex.: pytest, JUnit, Jest] | [Ex.: 8] |
-| Infraestrutura | [Ex.: Docker, GitHub Actions] | — |
-| Outras ferramentas | [Ex.: Git, Figma, Postman] | — |
+| Camada | Tecnologia |
+|---|---|
+| Linguagem | Python |
+| Backend | Django |
+| API REST | Django REST Framework |
+| Frontend | HTML, CSS e JavaScript |
+| Banco de dados | Banco de dados relacional |
+| API externa | ExerciseDB |
+| Controle de versão | Git e GitHub |
 
 ---
 
