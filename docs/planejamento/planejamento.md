@@ -2,9 +2,9 @@
 
 ## 1. Objetivo do planejamento
 
-Este documento apresenta a divisão das atividades, responsabilidades, marcos, riscos e estratégia de desenvolvimento do Evolift até a conclusão da Fase 2.
+Este documento organiza as atividades da Fase 1 do Evolift, mostrando a divisão das tarefas entre os integrantes, os principais marcos do trabalho e alguns riscos que podem aparecer durante essa etapa.
 
-O projeto será desenvolvido por uma equipe composta por três integrantes, utilizando o GitHub para controle de versão e acompanhamento das contribuições.
+O grupo é formado por três integrantes e o GitHub será usado para armazenar os arquivos e registrar as contribuições de cada um.
 
 ---
 
@@ -14,10 +14,10 @@ O projeto será desenvolvido por uma equipe composta por três integrantes, util
 |---|---|
 | Davi Castro | README, Documento de Visão e Planejamento |
 | Lucas Porcedda | Casos de Uso, especificações textuais, protótipos e identidade visual |
-| Eduardo Moreira | Arquitetura, modelo de dados, contrato da API REST e plano de integração com API externa |
-| Todos | Implementação, testes, revisão, segurança, publicação e apresentação |
+| Eduardo Moreira | Arquitetura, modelo de dados, contrato inicial da API REST e plano de integração com API externa |
+| Todos | Revisão final da documentação |
 
-> Os responsáveis indicados representam a responsabilidade principal de cada atividade. Todos os integrantes poderão colaborar na revisão e implementação das demais partes do projeto.
+A divisão foi feita para organizar melhor o trabalho. Mesmo assim, os integrantes podem revisar e ajudar nas partes dos outros quando necessário.
 
 ---
 
@@ -31,87 +31,95 @@ O projeto será desenvolvido por uma equipe composta por três integrantes, util
 | F1-04 | Elaborar planejamento do projeto | Davi Castro | Em andamento |
 | F1-05 | Elaborar diagrama de casos de uso | Lucas Porcedda | Pendente |
 | F1-06 | Elaborar especificações textuais dos casos de uso | Lucas Porcedda | Pendente |
-| F1-07 | Criar identidade visual do Evolift | Lucas Porcedda | Pendente |
+| F1-07 | Definir identidade visual do Evolift | Lucas Porcedda | Pendente |
 | F1-08 | Criar protótipos das telas principais | Lucas Porcedda | Pendente |
 | F1-09 | Elaborar arquitetura da aplicação | Eduardo Moreira | Pendente |
-| F1-10 | Elaborar modelo de dados | Eduardo Moreira| Pendente |
+| F1-10 | Elaborar modelo de dados | Eduardo Moreira | Pendente |
 | F1-11 | Definir contrato inicial da API REST | Eduardo Moreira | Pendente |
-| F1-12 | Definir integração com API externa | Eduardo Moreira | Pendente |
-| F1-13 | Revisar documentação e verificar consistência | Todos | Pendente |
-| F1-14 | Finalizar README da Fase 1 | Todos | Pendente |
+| F1-12 | Definir plano de integração com API externa | Eduardo Moreira | Pendente |
+| F1-13 | Revisar a documentação e conferir se as partes estão de acordo entre si | Todos | Pendente |
+| F1-14 | Atualizar o README para a entrega da Fase 1 | Todos | Pendente |
 
 ---
 
 ## 4. Marcos do projeto
 
-### Marco 1 — Estruturação do projeto
-- Repositório criado a partir do template.
+### Marco 1 — Organização inicial
+
+- Repositório criado a partir do modelo disponibilizado pelo professor.
 - Integrantes adicionados como colaboradores.
 - README inicial configurado.
-- Estrutura de documentação organizada.
+- Pastas da documentação organizadas.
 
 ### Marco 2 — Definição do projeto
+
 - Documento de Visão concluído.
-- Escopo e funcionalidades principais definidos.
-- Público-alvo e stakeholders identificados.
-- Riscos e critérios de sucesso registrados.
+- Problema e público-alvo definidos.
+- Funcionalidades principais definidas.
+- Escopo inicial organizado.
 
 ### Marco 3 — Modelagem
+
 - Casos de uso elaborados.
 - Especificações textuais concluídas.
 - Arquitetura documentada.
 - Modelo de dados elaborado.
 
-### Marco 4 — APIs e interface
-- Contrato inicial da API REST documentado.
-- Plano de integração com API externa documentado.
-- Identidade visual definida.
-- Protótipos das telas essenciais elaborados.
+### Marco 4 — APIs e protótipos
 
-### Marco 5 — Revisão da Fase 1
-- Documentos revisados.
-- Diagramas conferidos.
-- Arquivos editáveis adicionados ao repositório.
-- Consistência entre visão, casos de uso, arquitetura, banco de dados e APIs verificada.
+- Contrato inicial da API REST definido.
+- Plano da API externa definido.
+- Identidade visual concluída.
+- Protótipos das telas principais elaborados.
+
+### Marco 5 — Revisão
+
+- Conferir os documentos produzidos.
+- Conferir os diagramas.
+- Verificar se os arquivos editáveis dos diagramas também estão no repositório.
+- Verificar se visão, casos de uso, arquitetura, modelo de dados e APIs estão de acordo entre si.
 
 ### Marco 6 — Entrega da Fase 1
+
 - README atualizado.
-- Todos os integrantes com contribuições identificáveis.
-- Repositório acessível ao professor.
-- Commit ou tag da entrega registrado.
+- Documentação organizada.
+- Contribuições dos três integrantes registradas no GitHub.
+- Repositório acessível para avaliação.
+- Commit ou tag da entrega definido.
 
 ---
 
 ## 5. Estratégia de execução da Fase 1
 
-A Fase 1 será desenvolvida de forma colaborativa, com divisão de responsabilidades entre os três integrantes do grupo.
+As atividades foram divididas entre os três integrantes para que cada um tenha uma parte principal sob sua responsabilidade.
 
-Cada integrante ficará responsável principalmente por determinados artefatos, realizando seus próprios commits no repositório GitHub para permitir a identificação das contribuições.
+Os arquivos serão adicionados ao GitHub durante o desenvolvimento do trabalho, evitando deixar todos os commits para o final.
 
-Os documentos e diagramas serão desenvolvidos de forma integrada, buscando manter consistência entre o Documento de Visão, os casos de uso, a arquitetura, o modelo de dados, as APIs planejadas e os protótipos.
+Como vários documentos dependem uns dos outros, o grupo deverá manter as mesmas definições de funcionalidades e escopo nos casos de uso, arquitetura, modelo de dados e APIs.
 
-Antes da entrega, o grupo realizará uma revisão geral para verificar se todos os artefatos obrigatórios estão presentes, legíveis, organizados e coerentes entre si.
+Antes da entrega, os três integrantes farão uma revisão geral do repositório para conferir se não existem informações diferentes entre os documentos e se todos os itens pedidos na Fase 1 estão presentes.
 
-Os diagramas deverão possuir também seus respectivos arquivos editáveis, além das versões exportadas para consulta.
+Os diagramas também deverão ser enviados em formato editável e em um formato de fácil visualização, como PDF, PNG ou SVG.
 
 ---
 
 ## 6. Riscos do projeto
 
-| Risco | Probabilidade | Impacto | Tratamento |
+| Risco | Probabilidade | Impacto | Como pretendemos lidar |
 |---|---|---|---|
-| Atraso nas atividades | Média | Alto | Dividir responsabilidades e acompanhar o andamento |
-| Indisponibilidade da API externa | Média | Médio | Implementar tratamento de erro e indisponibilidade |
-| Dificuldade na integração entre funcionalidades | Média | Alto | Desenvolver e testar as funcionalidades gradualmente |
-| Problemas na hospedagem | Média | Alto | Realizar a publicação antes da data final |
-| Alterações de escopo | Média | Médio | Registrar alterações e atualizar a documentação |
-| Conflitos no GitHub | Baixa | Médio | Utilizar commits frequentes e sincronizar o repositório |
-| Falhas encontradas nas análises de segurança | Média | Alto | Executar SAST e DAST com antecedência para permitir correções |
+| Atraso em alguma atividade | Média | Alto | Dividir as tarefas desde o início e acompanhar o andamento |
+| Documentos com informações diferentes | Média | Alto | Fazer uma revisão conjunta antes da entrega |
+| Mudanças no escopo durante a Fase 1 | Média | Médio | Atualizar os documentos que forem afetados |
+| Dificuldade para escolher uma API externa adequada | Média | Médio | Comparar as opções antes de fechar a integração |
+| Conflitos ou perda de alterações no GitHub | Baixa | Médio | Fazer commits frequentes e atualizar o repositório antes de trabalhar |
+| Falta de algum arquivo editável dos diagramas | Baixa | Médio | Conferir todos os arquivos durante a revisão final |
 
 ---
 
 ## 7. Acompanhamento
 
-O andamento das tarefas poderá ser acompanhado pelo histórico de commits e pelas atividades registradas no GitHub.
+O andamento das atividades será acompanhado principalmente pelo backlog deste documento e pelo histórico de commits do GitHub.
 
-Os documentos e funcionalidades deverão ser atualizados sempre que decisões relevantes forem modificadas durante o desenvolvimento.
+Quando uma atividade for concluída, seu status poderá ser atualizado no backlog.
+
+Antes da entrega, o grupo fará uma última conferência de todos os itens obrigatórios da Fase 1.

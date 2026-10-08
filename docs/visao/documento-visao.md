@@ -2,19 +2,19 @@
 
 ## 1. Contexto e problema
 
-A prática de musculação envolve o acompanhamento constante de exercícios, séries, repetições e cargas utilizadas. Muitas pessoas realizam esse controle utilizando anotações em papel, aplicativos de notas ou planilhas, o que pode dificultar a organização e a consulta do histórico de treinos.
+Durante um treino de musculação, é comum precisar lembrar quais exercícios foram feitos, quantas séries e repetições foram realizadas e qual carga foi usada.
 
-Além disso, quando as informações ficam dispersas, torna-se mais difícil identificar a evolução de carga, consultar treinos anteriores e acompanhar o desempenho ao longo do tempo.
+Muitas pessoas acabam anotando essas informações no bloco de notas do celular, em planilhas ou até deixando de registrar. Depois de um tempo, pode ficar difícil consultar treinos antigos ou lembrar quanto estava sendo usado em determinado exercício.
 
-O Evolift surge como uma aplicação web voltada à centralização e organização dessas informações.
+O Evolift foi pensado para reunir essas informações em um só lugar e facilitar a organização dos treinos.
 
 ---
 
 ## 2. Justificativa
 
-O acompanhamento da evolução é uma parte importante da organização do treinamento de musculação. Entretanto, registrar manualmente as informações de cada treino pode se tornar pouco prático e dificultar consultas futuras.
+A ideia do Evolift surgiu da necessidade de ter uma forma mais organizada de registrar os treinos.
 
-O Evolift pretende oferecer uma solução simples e centralizada para registrar treinos e acompanhar o histórico de desempenho, permitindo que o usuário visualize suas informações de maneira organizada.
+Em vez de manter informações espalhadas em diferentes lugares, o usuário poderá registrar os exercícios realizados e consultar os dados depois. Isso também facilita a comparação entre treinos e o acompanhamento da evolução ao longo do tempo.
 
 ---
 
@@ -22,27 +22,27 @@ O Evolift pretende oferecer uma solução simples e centralizada para registrar 
 
 ### 3.1 Objetivo geral
 
-Desenvolver uma aplicação web para gerenciamento e acompanhamento de treinos de musculação.
+Desenvolver uma aplicação web para organizar treinos de musculação e acompanhar a evolução do usuário.
 
 ### 3.2 Objetivos específicos
 
-- Permitir o cadastro e gerenciamento de exercícios.
-- Permitir a criação e organização de treinos.
-- Registrar séries, repetições e cargas utilizadas.
-- Armazenar o histórico dos treinos realizados.
-- Permitir a consulta e busca de informações cadastradas.
-- Apresentar indicadores relacionados à evolução do usuário.
-- Gerar relatórios sobre os treinos realizados.
-- Disponibilizar parte das informações por meio de uma API REST.
-- Utilizar dados provenientes de uma API externa em uma funcionalidade do sistema.
+- cadastrar e organizar exercícios;
+- criar e organizar treinos;
+- registrar séries, repetições e cargas;
+- manter um histórico dos treinos realizados;
+- permitir a busca de exercícios e treinos;
+- mostrar informações sobre a evolução do usuário;
+- gerar relatórios relacionados aos treinos;
+- disponibilizar parte das informações por meio de uma API REST;
+- utilizar uma API externa em uma funcionalidade do sistema.
 
 ---
 
 ## 4. Público-alvo
 
-O Evolift é destinado principalmente a pessoas que praticam musculação e desejam organizar seus treinos e acompanhar sua evolução.
+O Evolift é voltado para pessoas que praticam musculação e querem manter seus treinos organizados.
 
-O sistema poderá ser utilizado tanto por praticantes iniciantes quanto por usuários que já treinam há mais tempo e desejam manter um histórico de suas atividades.
+A aplicação poderá ser utilizada tanto por quem começou a treinar recentemente quanto por pessoas que já treinam há mais tempo e querem acompanhar melhor seu histórico.
 
 ---
 
@@ -50,143 +50,147 @@ O sistema poderá ser utilizado tanto por praticantes iniciantes quanto por usu�
 
 ### Usuário
 
-Pessoa que utiliza o Evolift para organizar e registrar seus próprios treinos.
+Pessoa que utilizará o Evolift para criar seus treinos, registrar seus resultados e consultar o histórico.
 
-Principais interesses:
+Seus principais interesses são conseguir registrar as informações de forma simples e acompanhar sua evolução.
 
-- facilidade no registro das informações;
-- acesso ao histórico de treino;
-- acompanhamento da evolução;
-- organização dos exercícios e treinos.
+### Equipe do projeto
 
-### Equipe de desenvolvimento
-
-Responsável pelo planejamento, desenvolvimento, manutenção e evolução da aplicação.
+Os três integrantes responsáveis pela documentação, modelagem e demais atividades do projeto.
 
 ### Professor da disciplina
 
-Responsável pela avaliação do projeto e verificação dos requisitos definidos para o trabalho.
+Responsável por acompanhar e avaliar o trabalho desenvolvido pelo grupo.
 
 ---
 
 ## 6. Escopo do sistema
 
-O Evolift deverá permitir que o usuário organize seus treinos de musculação e registre informações referentes às sessões realizadas.
+Dentro do escopo inicial do Evolift estão:
 
-O sistema deverá contemplar:
-
-- gerenciamento de exercícios;
+- cadastro e gerenciamento de exercícios;
 - criação de treinos;
-- associação de exercícios aos treinos;
+- inclusão de exercícios nos treinos;
 - registro de séries, repetições e cargas;
-- registro de sessões de treino realizadas;
+- registro dos treinos realizados;
 - consulta ao histórico;
-- pesquisa de exercícios e treinos;
+- busca de exercícios e treinos;
 - acompanhamento da evolução;
 - geração de relatórios;
-- disponibilização de dados por API REST;
-- integração com uma API externa.
+- disponibilização de alguns dados através de uma API REST;
+- utilização de uma API externa relacionada ao contexto do sistema.
 
 ---
 
 ## 7. Itens fora do escopo
 
-Inicialmente, o Evolift não terá como objetivo:
+Neste projeto, não pretendemos incluir:
 
-- substituir a orientação de profissionais de Educação Física;
-- prescrever automaticamente treinos;
-- realizar diagnósticos relacionados à saúde;
-- oferecer acompanhamento médico;
-- funcionar como rede social;
-- possuir sistema de pagamentos ou assinaturas;
-- oferecer comunicação entre aluno e personal trainer.
+- prescrição automática de treinos;
+- diagnósticos relacionados à saúde;
+- acompanhamento médico;
+- sistema de pagamentos ou assinaturas;
+- funcionamento como rede social;
+- chat entre usuários;
+- acompanhamento direto entre aluno e personal trainer.
 
-Essas funcionalidades poderão ser consideradas futuramente, mas não fazem parte da versão inicial do projeto.
+Essas funcionalidades não fazem parte da proposta inicial do Evolift e aumentariam bastante o tamanho do projeto.
 
 ---
 
 ## 8. Funcionalidades previstas
 
 ### F01 — Gerenciar exercícios
+
 Permitir cadastrar, consultar, editar e excluir exercícios.
 
 ### F02 — Gerenciar treinos
+
 Permitir criar, consultar, editar e excluir treinos.
 
-### F03 — Associar exercícios a um treino
-Permitir selecionar os exercícios que farão parte de determinado treino.
+### F03 — Adicionar exercícios ao treino
 
-### F04 — Registrar execução do treino
-Permitir registrar que determinado treino foi realizado.
+Permitir escolher quais exercícios fazem parte de cada treino.
+
+### F04 — Registrar treino realizado
+
+Permitir registrar que um treino foi realizado pelo usuário.
 
 ### F05 — Registrar desempenho
+
 Permitir registrar séries, repetições e cargas utilizadas nos exercícios.
 
 ### F06 — Consultar histórico
-Permitir visualizar os treinos realizados anteriormente.
 
-### F07 — Pesquisar informações
-Permitir pesquisar exercícios e treinos utilizando critérios definidos pelo sistema.
+Permitir consultar os treinos realizados anteriormente.
+
+### F07 — Buscar informações
+
+Permitir pesquisar exercícios e treinos cadastrados.
 
 ### F08 — Acompanhar evolução
-Permitir consultar a evolução das cargas e do desempenho ao longo do tempo.
+
+Permitir comparar informações dos treinos ao longo do tempo.
 
 ### F09 — Gerar relatório
-Disponibilizar relatório com dados consolidados dos treinos realizados.
 
-### F10 — Disponibilizar API REST
-Disponibilizar informações selecionadas da aplicação através de endpoints REST.
+Apresentar informações resumidas sobre os treinos registrados.
 
-### F11 — Consumir API externa
-Utilizar informações provenientes de uma API externa em uma funcionalidade real da aplicação.
+### F10 — API REST
+
+Disponibilizar alguns dados do Evolift através de uma API REST.
+
+### F11 — Integração com API externa
+
+Utilizar dados de uma API externa em uma funcionalidade útil para o usuário.
 
 ---
 
 ## 9. Restrições
 
-- O backend deverá ser desenvolvido utilizando Python e Django.
-- O sistema deverá utilizar um banco de dados relacional.
-- A aplicação deverá possuir interface web responsiva.
-- A aplicação deverá possuir uma API REST própria.
-- O sistema deverá consumir uma API externa disponível na Internet.
-- Informações sensíveis não poderão ser armazenadas diretamente no repositório.
-- A aplicação deverá ser publicada em ambiente acessível pela Internet durante o período de avaliação.
+- o backend deverá ser desenvolvido em Python e Django;
+- deverá ser utilizado um banco de dados relacional;
+- a aplicação deverá possuir uma interface web responsiva;
+- deverá existir uma API REST própria;
+- o sistema deverá utilizar uma API externa disponível na Internet;
+- senhas, tokens, chaves e outras informações sensíveis não deverão ser colocados no repositório;
+- as decisões do projeto deverão seguir os requisitos definidos para o trabalho.
 
 ---
 
 ## 10. Premissas
 
-- O usuário possuirá acesso à Internet para utilizar a aplicação publicada.
-- Os dados utilizados durante o desenvolvimento e demonstração serão fictícios ou adequados ao contexto acadêmico.
-- A API externa escolhida deverá permanecer disponível durante o desenvolvimento.
-- Os integrantes da equipe participarão do desenvolvimento por meio do repositório GitHub.
-- As funcionalidades descritas neste documento poderão sofrer ajustes durante o desenvolvimento, desde que as alterações sejam documentadas.
+- os integrantes terão acesso ao GitHub para trabalhar no projeto;
+- os documentos serão atualizados caso alguma decisão importante do projeto seja alterada;
+- a API externa escolhida deverá atender às necessidades definidas pelo grupo;
+- os dados utilizados para demonstração deverão ser adequados ao contexto acadêmico;
+- os integrantes deverão manter suas contribuições identificáveis no repositório.
 
 ---
 
 ## 11. Riscos iniciais
 
-| Risco | Impacto | Estratégia |
+| Risco | Impacto | Como pretendemos lidar |
 |---|---|---|
-| Indisponibilidade da API externa | Médio | Tratar falhas e impedir que a indisponibilidade comprometa as demais funções |
-| Atrasos no desenvolvimento | Alto | Dividir tarefas entre os integrantes e acompanhar o andamento |
-| Alterações no escopo | Médio | Registrar e revisar mudanças antes da implementação |
-| Problemas na hospedagem | Alto | Realizar testes de publicação antes da entrega final |
-| Falta de integração entre partes do sistema | Alto | Manter documentação, banco de dados, casos de uso e código alinhados |
+| Atraso em alguma atividade | Alto | Dividir as tarefas entre os integrantes e acompanhar o andamento |
+| API externa escolhida não atender ao projeto | Médio | Avaliar as opções antes de fechar a escolha |
+| API externa ficar indisponível | Médio | Considerar esse risco durante o planejamento da integração |
+| Mudanças no escopo | Médio | Atualizar os documentos que forem afetados |
+| Documentos com informações diferentes | Alto | Fazer uma revisão geral antes da entrega |
+| Problemas com arquivos ou commits no GitHub | Médio | Fazer commits frequentes e manter o repositório atualizado |
 
 ---
 
 ## 12. Critérios de sucesso
 
-O projeto será considerado bem-sucedido quando:
+Para a proposta definida na Fase 1, esperamos que o Evolift tenha um planejamento capaz de permitir:
 
-- o usuário conseguir criar e organizar seus treinos;
-- exercícios puderem ser cadastrados e consultados;
-- séries, repetições e cargas puderem ser registradas;
-- o histórico de treinos puder ser consultado;
-- o sistema apresentar informações de evolução do usuário;
-- pelo menos um relatório puder ser visualizado;
-- a API REST própria estiver disponível e documentada;
-- a integração com a API externa estiver funcionando;
-- a aplicação estiver publicada e acessível pela Internet;
-- as funcionalidades planejadas estiverem coerentes com a documentação do projeto.
+- organização dos treinos do usuário;
+- cadastro e consulta de exercícios;
+- registro de séries, repetições e cargas;
+- consulta ao histórico de treinos;
+- acompanhamento da evolução;
+- geração de pelo menos um relatório;
+- definição de uma API REST própria;
+- definição de uma integração útil com uma API externa;
+- coerência entre os casos de uso, arquitetura, modelo de dados, APIs e demais documentos da Fase 1.
