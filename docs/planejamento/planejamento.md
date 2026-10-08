@@ -42,82 +42,61 @@ O projeto será desenvolvido por uma equipe composta por três integrantes, util
 
 ---
 
-## 4. Backlog inicial da Fase 2
+## 4. Marcos do projeto
 
-| ID | Atividade | Responsável |
-|---|---|---|
-| F2-01 | Configurar projeto Django | Todos |
-| F2-02 | Implementar banco de dados e migrations | Todos |
-| F2-03 | Implementar autenticação e controle de acesso | Todos |
-| F2-04 | Implementar cadastro e gerenciamento de exercícios | Todos |
-| F2-05 | Implementar criação e gerenciamento de treinos | Todos |
-| F2-06 | Implementar registro de séries, repetições e cargas | Todos |
-| F2-07 | Implementar histórico de treinos | Todos |
-| F2-08 | Implementar busca | Todos |
-| F2-09 | Implementar relatórios e indicadores | Todos |
-| F2-10 | Implementar API REST própria | Todos |
-| F2-11 | Implementar consumo da API externa | Todos |
-| F2-12 | Realizar testes | Todos |
-| F2-13 | Publicar aplicação | Todos |
-| F2-14 | Executar análise SAST | Todos |
-| F2-15 | Executar análise DAST | Todos |
-| F2-16 | Corrigir problemas identificados | Todos |
-| F2-17 | Preparar apresentação final | Todos |
+### Marco 1 — Estruturação do projeto
+- Repositório criado a partir do template.
+- Integrantes adicionados como colaboradores.
+- README inicial configurado.
+- Estrutura de documentação organizada.
 
----
-
-## 5. Marcos do projeto
-
-### Marco 1 — Estruturação
-- Repositório configurado.
-- Integrantes adicionados.
-- README inicial criado.
-
-### Marco 2 — Conclusão da documentação da Fase 1
+### Marco 2 — Definição do projeto
 - Documento de Visão concluído.
-- Casos de uso definidos.
-- Arquitetura definida.
+- Escopo e funcionalidades principais definidos.
+- Público-alvo e stakeholders identificados.
+- Riscos e critérios de sucesso registrados.
+
+### Marco 3 — Modelagem
+- Casos de uso elaborados.
+- Especificações textuais concluídas.
+- Arquitetura documentada.
 - Modelo de dados elaborado.
-- APIs planejadas.
-- Protótipos e identidade visual definidos.
-- Planejamento concluído.
 
-### Marco 3 — Implementação principal
-- Projeto Django configurado.
-- Funcionalidades principais implementadas.
-- Banco de dados integrado.
+### Marco 4 — APIs e interface
+- Contrato inicial da API REST documentado.
+- Plano de integração com API externa documentado.
+- Identidade visual definida.
+- Protótipos das telas essenciais elaborados.
 
-### Marco 4 — APIs e relatórios
-- API REST própria funcionando.
-- API externa integrada.
-- Busca e relatórios funcionando.
+### Marco 5 — Revisão da Fase 1
+- Documentos revisados.
+- Diagramas conferidos.
+- Arquivos editáveis adicionados ao repositório.
+- Consistência entre visão, casos de uso, arquitetura, banco de dados e APIs verificada.
 
-### Marco 5 — Publicação e segurança
-- Aplicação publicada.
-- Testes executados.
-- SAST e DAST realizados.
-- Problemas prioritários corrigidos.
-
-### Marco 6 — Entrega final
-- Documentação atualizada.
-- Aplicação disponível.
-- Apresentação preparada.
+### Marco 6 — Entrega da Fase 1
+- README atualizado.
+- Todos os integrantes com contribuições identificáveis.
+- Repositório acessível ao professor.
+- Commit ou tag da entrega registrado.
 
 ---
 
-## 6. Estratégia de desenvolvimento
+## 5. Estratégia de execução da Fase 1
 
-O desenvolvimento será realizado de forma incremental. Inicialmente será concluída a documentação e modelagem da aplicação. Após a validação da Fase 1, a equipe iniciará a implementação das funcionalidades em Django.
+A Fase 1 será desenvolvida de forma colaborativa, com divisão de responsabilidades entre os três integrantes do grupo.
 
-O GitHub será utilizado para controle de versão e registro das contribuições. Cada integrante deverá realizar commits identificáveis referentes às atividades pelas quais for responsável.
+Cada integrante ficará responsável principalmente por determinados artefatos, realizando seus próprios commits no repositório GitHub para permitir a identificação das contribuições.
 
-Durante a implementação, as funcionalidades serão desenvolvidas e testadas gradualmente, evitando concentrar todo o desenvolvimento próximo à data de entrega.
+Os documentos e diagramas serão desenvolvidos de forma integrada, buscando manter consistência entre o Documento de Visão, os casos de uso, a arquitetura, o modelo de dados, as APIs planejadas e os protótipos.
 
-Antes da entrega final, será realizada uma revisão entre documentação e implementação para verificar se os casos de uso, modelo de dados, arquitetura, APIs e funcionalidades permanecem coerentes.
+Antes da entrega, o grupo realizará uma revisão geral para verificar se todos os artefatos obrigatórios estão presentes, legíveis, organizados e coerentes entre si.
+
+Os diagramas deverão possuir também seus respectivos arquivos editáveis, além das versões exportadas para consulta.
 
 ---
 
-## 7. Riscos do projeto
+## 6. Riscos do projeto
 
 | Risco | Probabilidade | Impacto | Tratamento |
 |---|---|---|---|
@@ -131,7 +110,7 @@ Antes da entrega final, será realizada uma revisão entre documentação e impl
 
 ---
 
-## 8. Acompanhamento
+## 7. Acompanhamento
 
 O andamento das tarefas poderá ser acompanhado pelo histórico de commits e pelas atividades registradas no GitHub.
 
