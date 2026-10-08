@@ -108,27 +108,27 @@ Apresenta o problema, justificativa, objetivos, público-alvo, escopo, funcional
 
 ### Casos de Uso
 
-`docs/casos-de-uso/`
+`docs/modelagem/casos-de-uso/`
 
-Contém o diagrama UML de casos de uso e suas especificações textuais.
+Contém os PDFs das especificações textuais existentes. O diagrama editável de casos de uso não foi localizado nessa pasta durante a revisão.
 
 ### Arquitetura
 
 `docs/arquitetura/`
 
-Contém o diagrama e a descrição da arquitetura planejada para o sistema.
+Contém a [descrição da arquitetura planejada](docs/arquitetura/arquitetura.md), o diagrama editável em Mermaid e sua visualização em PNG.
 
 ### Modelo de Dados
 
 `docs/banco-de-dados/`
 
-Contém o modelo de dados planejado para o Evolift.
+Contém o [modelo de dados](docs/banco-de-dados/modelo-de-dados.md), com entidades, atributos, chaves e relacionamentos, além do diagrama editável e sua visualização em PNG.
 
 ### APIs
 
 `docs/api/`
 
-Contém o contrato inicial da API REST e o plano de integração com a API externa.
+Contém o [contrato inicial da API REST](docs/api/contrato-api-rest.md) e o [plano de integração com a API externa wger](docs/api/plano-api-externa.md).
 
 ### Protótipos e Identidade Visual
 

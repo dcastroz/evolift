@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1120" viewBox="0 0 1900 1120">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M1,1 L11,6 L1,11 Z" fill="#B7FF00"/>
+    </marker>
+    <style>
+      .bg { fill: #121212; }
+      .card { fill: #2A2A2A; stroke: #B7FF00; stroke-width: 3; rx: 14; }
+      .title { fill: #B7FF00; font: 700 30px Arial, sans-serif; }
+      .entity { fill: #B7FF00; font: 700 21px Arial, sans-serif; }
+      .field { fill: #f2f2f2; font: 17px Arial, sans-serif; }
+      .muted { fill: #bbb; font: 15px Arial, sans-serif; }
+      .line { fill: none; stroke: #B7FF00; stroke-width: 3; marker-end: url(#arrow); }
+      .label { fill: #B7FF00; font: 16px Arial, sans-serif; }
+      .divider { stroke: #777; stroke-width: 1; }
+    </style>
+  </defs>
+  <rect class="bg" width="1900" height="1120"/>
+  <text class="title" x="55" y="55">Evolift — modelo entidade-relacionamento (proposta)</text>
+  <text class="muted" x="55" y="83">PK: chave primária · FK: chave estrangeira · campos conceituais; detalhes no modelo-de-dados.md</text>
+
+  <g>
+    <rect class="card" x="55" y="150" width="290" height="195"/>
+    <text class="entity" x="200" y="185" text-anchor="middle">USUARIO</text>
+    <line class="divider" x1="75" y1="200" x2="325" y2="200"/>
+    <text class="field" x="78" y="230">PK id</text>
+    <text class="field" x="78" y="258">UK email</text>
+    <text class="field" x="78" y="286">nome</text>
+    <text class="field" x="78" y="314">criado_em</text>
+  </g>
+
+  <g>
+    <rect class="card" x="490" y="115" width="430" height="315"/>
+    <text class="entity" x="705" y="150" text-anchor="middle">EXERCICIO</text>
+    <line class="divider" x1="510" y1="165" x2="900" y2="165"/>
+    <text class="field" x="513" y="195">PK id</text>
+    <text class="field" x="513" y="223">FK usuario_id (opcional)</text>
+    <text class="field" x="513" y="251">nome · descricao</text>
+    <text class="field" x="513" y="279">grupo_muscular · equipamento</text>
+    <text class="field" x="513" y="307">origem · id_externo (opcional)</text>
+    <text class="field" x="513" y="335">licenca_origem · url_licenca</text>
+    <text class="field" x="513" y="363">autor_origem</text>
+    <text class="muted" x="513" y="400">Origem local ou catálogo wger</text>
+  </g>
+
+  <g>
+    <rect class="card" x="55" y="535" width="290" height="195"/>
+    <text class="entity" x="200" y="570" text-anchor="middle">TREINO</text>
+    <line class="divider" x1="75" y1="585" x2="325" y2="585"/>
+    <text class="field" x="78" y="615">PK id</text>
+    <text class="field" x="78" y="643">FK usuario_id</text>
+    <text class="field" x="78" y="671">nome</text>
+    <text class="field" x="78" y="699">criado_em · atualizado_em</text>
+  </g>
+
+  <g>
+    <rect class="card" x="490" y="535" width="320" height="195"/>
+    <text class="entity" x="650" y="570" text-anchor="middle">TREINO_EXERCICIO</text>
+    <line class="divider" x1="510" y1="585" x2="790" y2="585"/>
+    <text class="field" x="513" y="615">PK id</text>
+    <text class="field" x="513" y="643">FK treino_id</text>
+    <text class="field" x="513" y="671">FK exercicio_id</text>
+    <text class="field" x="513" y="699">posicao (única no treino)</text>
+  </g>
+
+  <g>
+    <rect class="card" x="1010" y="535" width="320" height="195"/>
+    <text class="entity" x="1170" y="570" text-anchor="middle">SESSAO_TREINO</text>
+    <line class="divider" x1="1030" y1="585" x2="1310" y2="585"/>
+    <text class="field" x="1033" y="615">PK id</text>
+    <text class="field" x="1033" y="643">FK usuario_id</text>
+    <text class="field" x="1033" y="671">FK treino_id</text>
+    <text class="field" x="1033" y="699">realizado_em</text>
+  </g>
+
+  <g>
+    <rect class="card" x="1010" y="835" width="390" height="225"/>
+    <text class="entity" x="1205" y="870" text-anchor="middle">SESSAO_EXERCICIO</text>
+    <line class="divider" x1="1030" y1="885" x2="1380" y2="885"/>
+    <text class="field" x="1033" y="915">PK id</text>
+    <text class="field" x="1033" y="943">FK sessao_treino_id</text>
+    <text class="field" x="1033" y="971">FK exercicio_id</text>
+    <text class="field" x="1033" y="999">FK treino_exercicio_id (opcional)</text>
+    <text class="field" x="1033" y="1027">posicao</text>
+  </g>
+
+  <g>
+    <rect class="card" x="1510" y="835" width="300" height="225"/>
+    <text class="entity" x="1660" y="870" text-anchor="middle">SERIE</text>
+    <line class="divider" x1="1530" y1="885" x2="1790" y2="885"/>
+    <text class="field" x="1533" y="915">PK id</text>
+    <text class="field" x="1533" y="943">FK sessao_exercicio_id</text>
+    <text class="field" x="1533" y="971">numero · repeticoes</text>
+    <text class="field" x="1533" y="999">carga_kg</text>
+    <text class="muted" x="1533" y="1032">número único por exercício/sessão</text>
+  </g>
+
+  <path class="line" d="M345 230 H490"/>
+  <text class="label" x="355" y="215">1 : N privado</text>
+  <path class="line" d="M200 345 V535"/>
+  <text class="label" x="210" y="455">1 : N treinos</text>
+  <path class="line" d="M345 625 H490"/>
+  <text class="label" x="380" y="610">1 : N</text>
+  <path class="line" d="M650 535 V430"/>
+  <text class="label" x="660" y="485">N : 1</text>
+  <path class="line" d="M200 730 V790 H1170 V730"/>
+  <text class="label" x="560" y="775">1 : N sessões do treino</text>
+  <path class="line" d="M55 250 H25 V820 H990 V650 H1010"/>
+  <text class="label" x="360" y="810">usuário registra 1 : N sessões</text>
+  <path class="line" d="M1170 730 V835"/>
+  <text class="label" x="1180" y="790">1 : N realizados</text>
+  <path class="line" d="M920 370 H970 V930 H1010"/>
+  <text class="label" x="928" y="910">1 : N</text>
+  <path class="line" d="M1330 940 H1510"/>
+  <text class="label" x="1340" y="920">1 : N séries</text>
+  <path class="line" d="M810 690 H950 V990 H1010"/>
+  <text class="label" x="815" y="720">origem opcional</text>
+
+  <text class="muted" x="55" y="1090">Histórico, evolução e relatórios são derivados das sessões e séries; não exigem tabelas próprias nesta proposta.</text>
+</svg>

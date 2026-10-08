@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="850" viewBox="0 0 1500 850">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M1,1 L11,6 L1,11 Z" fill="#B7FF00"/>
+    </marker>
+    <style>
+      .bg { fill: #121212; }
+      .card { fill: #2A2A2A; stroke: #B7FF00; stroke-width: 3; rx: 18; }
+      .group { fill: #191919; stroke: #777; stroke-width: 2; stroke-dasharray: 10 8; rx: 24; }
+      .title { fill: #B7FF00; font: 700 29px Arial, sans-serif; }
+      .heading { fill: #fff; font: 700 22px Arial, sans-serif; }
+      .text { fill: #ddd; font: 18px Arial, sans-serif; }
+      .small { fill: #bbb; font: 16px Arial, sans-serif; }
+      .line { fill: none; stroke: #B7FF00; stroke-width: 3; marker-end: url(#arrow); }
+      .lineBoth { fill: none; stroke: #B7FF00; stroke-width: 3; marker-start: url(#arrow); marker-end: url(#arrow); }
+      .label { fill: #B7FF00; font: 16px Arial, sans-serif; }
+    </style>
+  </defs>
+  <rect class="bg" width="1500" height="850"/>
+  <text class="title" x="55" y="55">Evolift — arquitetura planejada (Fase 1)</text>
+  <text class="small" x="55" y="84">Web responsiva · Django · banco relacional a definir · consulta pública ao wger</text>
+
+  <rect class="card" x="45" y="300" width="170" height="110"/>
+  <text class="heading" x="130" y="345" text-anchor="middle">Usuário</text>
+  <text class="text" x="130" y="378" text-anchor="middle">navega e registra</text>
+
+  <rect class="card" x="275" y="280" width="255" height="150"/>
+  <text class="heading" x="402" y="325" text-anchor="middle">Navegador</text>
+  <text class="text" x="402" y="360" text-anchor="middle">HTML · CSS · JavaScript</text>
+  <text class="small" x="402" y="390" text-anchor="middle">interface responsiva</text>
+
+  <rect class="group" x="580" y="120" width="610" height="560"/>
+  <text class="title" x="610" y="160">Aplicação Django</text>
+
+  <rect class="card" x="615" y="200" width="245" height="125"/>
+  <text class="heading" x="737" y="242" text-anchor="middle">Interface web</text>
+  <text class="text" x="737" y="275" text-anchor="middle">telas e formulários</text>
+  <text class="small" x="737" y="302" text-anchor="middle">templates web</text>
+
+  <rect class="card" x="890" y="200" width="260" height="125"/>
+  <text class="heading" x="1020" y="242" text-anchor="middle">API REST Evolift</text>
+  <text class="text" x="1020" y="275" text-anchor="middle">contrato /api/v1</text>
+  <text class="small" x="1020" y="302" text-anchor="middle">biblioteca a definir</text>
+
+  <rect class="card" x="700" y="385" width="360" height="135"/>
+  <text class="heading" x="880" y="430" text-anchor="middle">Módulos do domínio</text>
+  <text class="text" x="880" y="466" text-anchor="middle">contas · exercícios · treinos</text>
+  <text class="text" x="880" y="494" text-anchor="middle">registros · histórico · relatórios</text>
+
+  <rect class="card" x="620" y="555" width="280" height="90"/>
+  <text class="heading" x="760" y="592" text-anchor="middle">Adaptador wger</text>
+  <text class="small" x="760" y="620" text-anchor="middle">paginação · normalização · cache</text>
+
+  <rect class="card" x="1260" y="280" width="205" height="145"/>
+  <text class="heading" x="1362" y="325" text-anchor="middle">Banco</text>
+  <text class="text" x="1362" y="360" text-anchor="middle">relacional</text>
+  <text class="small" x="1362" y="390" text-anchor="middle">produto a definir</text>
+
+  <rect class="card" x="255" y="580" width="265" height="115"/>
+  <text class="heading" x="387" y="625" text-anchor="middle">API pública wger</text>
+  <text class="text" x="387" y="660" text-anchor="middle">catálogo de exercícios</text>
+
+  <path class="line" d="M215 355 H275"/>
+  <path class="line" d="M530 320 H615"/>
+  <path class="line" d="M860 315 H890"/>
+  <path class="line" d="M737 325 V385"/>
+  <path class="line" d="M1020 325 V385"/>
+  <path class="lineBoth" d="M1060 452 H1260"/>
+  <text class="label" x="1150" y="425" text-anchor="middle">leitura / gravação</text>
+  <path class="line" d="M780 520 V555"/>
+  <path class="line" d="M620 602 H560 V638 H520"/>
+  <path class="line" d="M520 665 H555 V630 H620"/>
+  <text class="label" x="565" y="580" text-anchor="middle">consulta</text>
+
+  <text class="small" x="55" y="790">Escopo documental. Nenhum backend, banco ou serviço foi implementado nesta fase.</text>
+</svg>

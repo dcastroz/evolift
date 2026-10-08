@@ -1,0 +1,20 @@
+flowchart LR
+    pessoa[Usuário]
+    browser[Navegador<br/>HTML · CSS · JavaScript]
+    django[Aplicação Django]
+    ui[Interface web<br/>telas e formulários]
+    modules[Módulos do domínio<br/>contas · exercícios · treinos<br/>registros · histórico · relatórios]
+    rest[API REST Evolift<br/>contrato /api/v1]
+    db[(Banco relacional<br/>tecnologia a definir)]
+    adapter[Adaptador wger<br/>consulta, paginação<br/>e cache do catálogo]
+    wger[API pública wger<br/>catálogo de exercícios]
+
+    pessoa --> browser
+    browser <--> ui
+    ui --> rest
+    ui <--> modules
+    rest <--> modules
+    modules <--> db
+    modules --> adapter
+    adapter --> wger
+    wger --> adapter
