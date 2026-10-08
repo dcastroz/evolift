@@ -1,4 +1,4 @@
-# [Nome do Projeto]
+# EvoLift
 
 > Substitua os trechos entre colchetes `[ ]` pelas informações reais do trabalho. Remova esta nota e as demais orientações em *itálico* antes da entrega.
 
@@ -6,12 +6,12 @@
 [![Versão](https://img.shields.io/badge/versão-[0.1.0]-blue)]()
 [![Licença](https://img.shields.io/badge/licença-[acadêmica]-lightgrey)]()
 
-**Instituição:** [Nome da instituição]  
-**Curso:** [Nome do curso]  
-**Disciplina:** [Nome da disciplina]  
-**Turma / Semestre:** [Ex.: 2026.2]  
-**Professor(a):** [Nome completo]  
-**Status do projeto:** [Protótipo / MVP / Em desenvolvimento / Concluído]
+**Instituição:** CEUB 
+**Curso:** Ciência da Computação  
+**Disciplina:** Desenvolvimento Web  
+**Turma / Semestre:** 2026.2 
+**Professor(a):** Felippe Pires Ferreira 
+**Status do projeto:** Em desenvolvimento
 
 ---
 
@@ -37,26 +37,34 @@
 
 ## 1. Descrição do projeto
 
-*Apresente o contexto, o problema e a solução proposta. Use linguagem objetiva (dois a quatro parágrafos).*
+O Evolift é uma aplicação web voltada para o gerenciamento e acompanhamento de treinos de musculação.
 
-[Descreva o que o sistema faz, para quem ele se destina e qual problema ele resolve.]
+O sistema permitirá que usuários organizem seus treinos, cadastrem exercícios, registrem séries, repetições e cargas utilizadas durante os treinamentos. 
+A aplicação também permitirá acompanhar o histórico dos treinos e a evolução do usuário ao longo do tempo.
+
+A proposta do Evolift é facilitar o registro das informações de treino e permitir que o usuário visualize sua progressão de forma organizada e acessível.
 
 ### Objetivos
 
 *Liste os objetivos gerais e específicos do projeto.*
 
-- **Objetivo geral:** [Ex.: desenvolver uma aplicação web para gerenciar reservas de laboratórios.]
+- **Objetivo geral:** 
+Desenvolver uma aplicação web para gerenciamento e acompanhamento de treinos de musculação.
+
 - **Objetivos específicos:**
-  - [Ex.: permitir cadastro e autenticação de usuários.]
-  - [Ex.: registrar e consultar reservas por data e laboratório.]
-  - [Ex.: gerar relatórios de ocupação.]
+  - Permitir o cadastro e gerenciamento de exercícios.
+  - Permitir a criação e organização de treinos.
+  - Registrar séries, repetições e cargas utilizadas.
+  - Manter o histórico dos treinos realizados.
+  - Permitir a consulta da evolução do usuário.
+  - Disponibilizar relatórios e indicadores relacionados aos treinos.
 
 ### Público-alvo
 
-- [Ex.: estudantes da instituição]
-- [Ex.: professores responsáveis pelos laboratórios]
-- [Ex.: equipe administrativa]
-
+- Pessoas que praticam musculação.
+- Usuários que desejam organizar seus treinos.
+- Pessoas interessadas em acompanhar sua evolução de cargas e desempenho.
+  
 ---
 
 ## 2. Funcionalidades
