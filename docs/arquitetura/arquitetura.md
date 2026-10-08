@@ -8,25 +8,34 @@ O Evolift será uma aplicação web responsiva. O navegador apresenta a interfac
 
 ```mermaid
 flowchart LR
-    pessoa[Usuário]
-    browser[Navegador<br/>HTML · CSS · JavaScript]
-    django[Aplicação Django]
-    ui[Interface web<br/>telas e formulários]
-    modules[Módulos do domínio<br/>contas · exercícios · treinos<br/>registros · histórico · relatórios]
+    usuario[Usuário]
+    administrador[Administrador]
+
+    navegador[Navegador<br/>HTML · CSS · JavaScript]
+    interface[Interface web<br/>treinos · histórico · administração]
+    django[Backend Django<br/>autenticação · permissões · regras]
+
+    modulos[Módulos do domínio<br/>contas · exercícios · treinos<br/>sessões · evolução · relatórios]
     rest[API REST Evolift<br/>contrato /api/v1]
-    db[(Banco relacional<br/>tecnologia a definir)]
-    adapter[Adaptador wger<br/>consulta, paginação<br/>e cache do catálogo]
+    resumo[Resumo automático<br/>ao concluir sessão]
+
+    banco[(Banco relacional<br/>tecnologia a definir)]
+    adaptador[Adaptador wger<br/>consulta e cache do catálogo]
     wger[API pública wger<br/>catálogo de exercícios]
 
-    pessoa --> browser
-    browser <--> ui
-    ui --> rest
-    ui <--> modules
-    rest <--> modules
-    modules <--> db
-    modules --> adapter
-    adapter --> wger
-    wger --> adapter
+    usuario --> navegador
+    administrador --> navegador
+    navegador <--> interface
+    interface <--> django
+    interface --> rest
+    django <--> modulos
+    rest <--> modulos
+    modulos <--> banco
+    modulos --> resumo
+    resumo --> banco
+    modulos <--> adaptador
+    adaptador <--> wger
+
 ```
 
 O diagrama editável está em [`diagrama-arquitetura.mmd`](./diagrama-arquitetura.mmd) e a visualização PNG em [`diagrama-arquitetura.png`](./diagrama-arquitetura.png).
@@ -53,6 +62,24 @@ O diagrama editável está em [`diagrama-arquitetura.mmd`](./diagrama-arquitetur
 
 O endpoint público atual não oferece, na documentação consultada, uma busca textual de exercícios por nome. A estratégia planejada é paginar o catálogo e pesquisar sobre os dados normalizados em cache local, em vez de presumir que um parâmetro `name` será aplicado pelo serviço externo.
 
+## Fluxo previsto: concluir uma sessão de treino
+
+1. O usuário inicia uma sessão a partir de um treino cadastrado.
+2. Durante a sessão, registra séries, repetições e cargas.
+3. Ao selecionar "Finalizar treino", o backend valida os dados
+   e registra o horário de término.
+4. O sistema gera automaticamente o resumo da sessão, com
+   duração, exercícios e resultados registrados.
+5. Após a conclusão, os dados ficam disponíveis no histórico
+   e podem ser utilizados nos relatórios e na evolução.
+
+Se houver uma falha na geração do resumo, o sistema preserva
+os registros e não confirma a conclusão até que o processo
+possa ser finalizado corretamente.
+
+Esse fluxo corresponde ao relacionamento de inclusão entre
+UC07 — Concluir sessão de treino e UC08 — Gerar resumo da sessão.
+
 ## Segurança e limites do escopo
 
 - O usuário autenticado só pode consultar ou alterar seus próprios treinos e registros.
@@ -61,6 +88,12 @@ O endpoint público atual não oferece, na documentação consultada, uma busca 
 - A comunicação externa é somente para leitura do catálogo público; o Evolift não envia dados pessoais ou de treino ao wger.
 - Indisponibilidade externa, respostas inválidas e limites de tempo devem ser tratados explicitamente, com retorno ao cache quando houver dados anteriores.
 - As camadas e os fluxos acima são propostas documentais da Fase 1. Deploy, banco concreto, biblioteca REST e detalhes de implementação ficam para decisão e desenvolvimento posteriores.
+- O administrador terá permissões específicas para gerenciar contas
+  e o catálogo geral de exercícios, sem acesso automático aos
+  treinos e históricos pessoais dos usuários.
+- Ao concluir uma sessão de treino, o sistema deverá gerar
+  automaticamente um resumo a partir dos registros da própria
+  sessão, sem depender da API wger.
 
 ## Relação com o modelo de dados e o contrato
 

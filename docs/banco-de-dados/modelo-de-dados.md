@@ -1,39 +1,41 @@
 # Modelo de dados — Evolift
 
-> Modelo lógico proposto para a Fase 1. Não cria nem configura um banco de dados. A tecnologia relacional e os tipos físicos serão definidos antes da implementação.
+> Modelo lógico proposto para a Fase 1. Este documento descreve a estrutura planejada, sem criar ou configurar um banco de dados. O banco relacional e os tipos físicos serão definidos antes da implementação.
 
 ## Diagrama entidade-relacionamento
 
-O arquivo editável é [`diagrama-er.mmd`](./diagrama-er.mmd); a versão PNG está em [`diagrama-er.png`](./diagrama-er.png).
+O arquivo editável do diagrama é [`diagrama-er.mmd`](./diagrama-er.mmd), e a versão para visualização está em [`diagrama-er.png`](./diagrama-er.png).
 
 ```mermaid
 erDiagram
     USUARIO ||--o{ EXERCICIO : "cria"
     USUARIO ||--o{ TREINO : "organiza"
     USUARIO ||--o{ SESSAO_TREINO : "registra"
-    TREINO ||--|{ TREINO_EXERCICIO : "compoe"
+    TREINO ||--o{ TREINO_EXERCICIO : "compoe"
     EXERCICIO ||--o{ TREINO_EXERCICIO : "incluido"
     TREINO ||--o{ SESSAO_TREINO : "executado"
-    SESSAO_TREINO ||--|{ SESSAO_EXERCICIO : "registra"
+    SESSAO_TREINO ||--o{ SESSAO_EXERCICIO : "registra"
     EXERCICIO ||--o{ SESSAO_EXERCICIO : "realizado"
     TREINO_EXERCICIO o|--o{ SESSAO_EXERCICIO : "origem_opcional"
-    SESSAO_EXERCICIO ||--|{ SERIE : "detalha"
+    SESSAO_EXERCICIO ||--o{ SERIE : "detalha"
 
     USUARIO {
         int id PK
         string email UK
         string nome
+        string perfil "usuario ou administrador"
+        boolean ativo
         datetime criado_em
     }
     EXERCICIO {
         int id PK
-        int usuario_id FK "nulo para catálogo compartilhado"
+        int usuario_id FK "nulo para catalogo compartilhado"
         string nome
         string descricao
         string grupo_muscular
         string equipamento
-        string origem "local ou wger"
-        int id_externo "nulo para local"
+        string origem "pessoal, geral ou wger"
+        int id_externo "nulo para exercicios locais"
         string licenca_origem
         string url_licenca
         string autor_origem
@@ -55,7 +57,9 @@ erDiagram
         int id PK
         int usuario_id FK
         int treino_id FK
-        datetime realizado_em
+        datetime iniciado_em
+        datetime finalizado_em
+        string status "em_andamento ou concluida"
     }
     SESSAO_EXERCICIO {
         int id PK
@@ -77,40 +81,50 @@ erDiagram
 
 | Entidade | Atributos principais | Chaves e observações |
 |---|---|---|
-| **Usuário** | `id`, `email`, `nome`, `criado_em` | `id` é PK; `email` é único. A senha não é um atributo exposto deste modelo: o Django deve armazenar apenas o hash gerido pelo seu sistema de autenticação. |
-| **Exercício** | `id`, `usuario_id`, `nome`, `descricao`, `grupo_muscular`, `equipamento`, `origem`, `id_externo`, `licenca_origem`, `url_licenca`, `autor_origem` | `id` é PK; `usuario_id` é FK opcional para exercícios privados. `origem` diferencia exercício criado no Evolift e item do wger. O identificador externo é único em conjunto com a origem quando preenchido. Créditos e licença do item externo são preservados conforme os dados recebidos. |
-| **Treino** | `id`, `usuario_id`, `nome`, `criado_em`, `atualizado_em` | `id` é PK; `usuario_id` é FK obrigatória para o proprietário. |
-| **TreinoExercicio** | `id`, `treino_id`, `exercicio_id`, `posicao` | Associação entre treino e exercício; as duas FKs são obrigatórias. `posicao` permite manter a ordem, única dentro do treino. |
-| **SessaoTreino** | `id`, `usuario_id`, `treino_id`, `realizado_em` | Registra a realização de um treino. `usuario_id` e `treino_id` são FKs obrigatórias; `realizado_em` alimenta o histórico. |
-| **SessaoExercicio** | `id`, `sessao_treino_id`, `exercicio_id`, `treino_exercicio_id`, `posicao` | Registra o exercício efetivamente associado a uma sessão. A FK `treino_exercicio_id` pode ser nula para preservar a sessão mesmo se a composição do treino mudar; `exercicio_id` mantém a referência ao exercício. |
-| **Serie** | `id`, `sessao_exercicio_id`, `numero`, `repeticoes`, `carga_kg` | Registra a série realizada. A combinação `sessao_exercicio_id` + `numero` é única. `repeticoes` deve ser inteiro positivo; `carga_kg` é decimal não negativo. |
+| **Usuário** | `id`, `email`, `nome`, `perfil`, `ativo`, `criado_em` | `id` é PK e `email` é único. `perfil` diferencia usuário comum e administrador; `ativo` indica se a conta pode acessar o sistema. As senhas ficarão sob responsabilidade da autenticação do Django, com armazenamento seguro de hash. |
+| **Exercício** | `id`, `usuario_id`, `nome`, `descricao`, `grupo_muscular`, `equipamento`, `origem`, `id_externo`, `licenca_origem`, `url_licenca`, `autor_origem` | `id` é PK. `usuario_id` identifica o dono de um exercício pessoal, mas é opcional para itens do catálogo geral ou da wger. `origem` pode ser `pessoal`, `geral` ou `wger`. `id_externo` e os dados de licença/autoria se aplicam aos exercícios externos. |
+| **Treino** | `id`, `usuario_id`, `nome`, `criado_em`, `atualizado_em` | `id` é PK; `usuario_id` é FK obrigatória para o proprietário do treino. |
+| **TreinoExercicio** | `id`, `treino_id`, `exercicio_id`, `posicao` | Liga exercícios a treinos; ambas as FKs são obrigatórias. `posicao` define a ordem dos exercícios e não deve se repetir dentro do mesmo treino. |
+| **SessaoTreino** | `id`, `usuario_id`, `treino_id`, `iniciado_em`, `finalizado_em`, `status` | `id` é PK. As FKs identificam o usuário e o treino. `iniciado_em` registra o começo; `finalizado_em` fica vazio enquanto a sessão está em andamento. `status` indica `em_andamento` ou `concluida`. |
+| **SessaoExercicio** | `id`, `sessao_treino_id`, `exercicio_id`, `treino_exercicio_id`, `posicao` | Guarda os exercícios efetivamente registrados em uma sessão. `treino_exercicio_id` é opcional, para que o histórico continue consultável mesmo que o treino planejado seja alterado. |
+| **Serie** | `id`, `sessao_exercicio_id`, `numero`, `repeticoes`, `carga_kg` | Registra as séries realizadas. A combinação de `sessao_exercicio_id` e `numero` deve ser única; `repeticoes` é um inteiro positivo e `carga_kg` não pode ser negativa. |
 
-Os nomes são lógicos; podem ser mapeados para nomes de tabelas/colunas compatíveis com as convenções do Django. `int`, `string`, `decimal` e `datetime` no desenho representam tipos conceituais, não uma escolha de dialeto.
+Os nomes e tipos acima são lógicos. No desenvolvimento, poderão ser adaptados às convenções do Django e ao banco relacional escolhido.
 
 ## Relacionamentos e cardinalidades
 
-- Um usuário pode ter zero ou vários exercícios privados, treinos e sessões; cada treino e sessão pertence a exatamente um usuário.
-- Um treino contém zero ou vários exercícios por meio de `TreinoExercicio` (permitindo criar o treino antes de adicionar exercícios); um exercício pode aparecer em vários treinos.
-- Um treino pode ser realizado em várias sessões; cada sessão referencia um treino e o usuário que a registrou.
-- Uma sessão pode conter zero ou vários exercícios realizados por meio de `SessaoExercicio` enquanto o registro está sendo preenchido.
-- Um exercício pode estar em várias composições de treino e em várias sessões.
-- Cada exercício realizado em uma sessão pode ter zero ou várias séries enquanto o registro está sendo preenchido; cada série pertence a exatamente um exercício da sessão.
-- Exercícios importados do catálogo externo não pertencem a um usuário específico (`usuario_id` nulo); exercícios privados pertencem ao usuário criador.
+- Um usuário pode ter zero ou vários exercícios pessoais, treinos e sessões. Cada treino e sessão pertence a exatamente um usuário.
+- Exercícios do catálogo geral ou provenientes da wger não possuem proprietário pessoal (`usuario_id` nulo); exercícios particulares pertencem ao usuário que os cadastrou.
+- Um treino pode ser criado sem exercícios e receber vários exercícios posteriormente, por meio de `TreinoExercicio`. Um mesmo exercício pode integrar diversos treinos.
+- Um treino pode originar várias sessões de execução. Cada sessão referencia um treino e o usuário que a realizou.
+- Uma sessão pode não ter exercícios registrados logo após ser iniciada. Os registros são adicionados por meio de `SessaoExercicio`.
+- Um exercício pode aparecer em várias sessões. Cada exercício de uma sessão pode receber zero ou várias séries enquanto o usuário preenche os resultados.
+- A referência `treino_exercicio_id` é opcional, pois a composição do treino pode mudar depois de uma sessão registrada.
 
 ## Restrições de integridade
 
-1. Email único; não armazenar nem retornar senha em claro.
-2. Treino, sessão e exercício privado só podem ser lidos ou alterados pelo usuário proprietário.
-3. Uma composição de treino não pode repetir a mesma posição; uma série não pode repetir o número dentro do mesmo exercício da sessão.
-4. `numero` e `repeticoes` devem ser maiores que zero; `carga_kg` deve ser maior ou igual a zero.
-5. `origem = local` exige proprietário e não usa `id_externo`; `origem = wger` exige identificador e metadados de proveniência. Aplicar unicidade para `(origem, id_externo)` nos registros externos.
-6. Exclusões que apagariam registros de sessões ou séries devem ser impedidas; preservar o histórico tem prioridade sobre remoções em cascata.
-7. Na associação opcional entre `SessaoExercicio` e `TreinoExercicio`, validar que ambas pertencem ao mesmo treino para não associar um exercício de outra rotina.
+1. O e-mail de cada conta deve ser único. Senhas não devem ser armazenadas nem retornadas em texto puro.
+2. O campo `perfil` distingue `usuario` e `administrador`, e `ativo` controla se a conta está habilitada. Apenas administradores podem gerenciar contas e o catálogo geral.
+3. Usuários comuns só podem consultar e modificar seus próprios treinos, exercícios particulares e registros. O perfil de administrador não permite acesso automático a históricos pessoais.
+4. Um exercício com `origem = pessoal` exige `usuario_id` válido. Exercícios com `origem = geral` ou `origem = wger` não têm proprietário pessoal. O catálogo geral é mantido pelo administrador.
+5. Exercícios da wger exigem `id_externo` e os metadados de origem/licença aplicáveis. A combinação `(origem, id_externo)` deve ser única quando houver identificador externo. Os créditos devem ser preservados conforme as condições de uso de cada item.
+6. A posição de um exercício não pode se repetir dentro do mesmo treino. Da mesma forma, o número da série não pode se repetir dentro de um mesmo exercício de sessão.
+7. `numero` e `repeticoes` devem ser maiores que zero, enquanto `carga_kg` deve ser maior ou igual a zero.
+8. Uma sessão com `status = em_andamento` possui `iniciado_em` e ainda não possui `finalizado_em`. Ao concluir, deve registrar `finalizado_em`, que não pode ser anterior ao início.
+9. A conclusão da sessão inclui a geração do resumo (UC07 e UC08). Se houver falha nessa etapa, os registros já salvos devem ser preservados e a conclusão não deve ser confirmada indevidamente.
+10. Exclusões ou edições de treinos e exercícios não devem apagar sessões e séries históricas. Quando necessário, o item pode deixar de aparecer em novas seleções sem eliminar referências existentes.
+11. Se `SessaoExercicio` apontar para `TreinoExercicio`, as referências devem ser compatíveis com o treino e o exercício da sessão, evitando associações incorretas.
 
 ## Dados derivados
 
-Histórico, evolução e relatório são consultas agregadas sobre `SessaoTreino`, `SessaoExercicio` e `Serie`; não exigem tabelas próprias nesta proposta. A evolução pode apresentar séries e cargas agrupadas por exercício e data, sem inferir prescrições ou diagnósticos.
+O **histórico de treinos** é obtido a partir das sessões concluídas e seus registros. A data de início, a data de término e o status ajudam a ordenar e identificar cada sessão.
+
+O **resumo da sessão** é gerado automaticamente ao finalizar um treino, com a duração calculada a partir de `iniciado_em` e `finalizado_em`, além dos exercícios, séries, repetições e cargas registrados.
+
+A **evolução** e os **relatórios de desempenho** são calculados com base em `SessaoTreino`, `SessaoExercicio` e `Serie`. Nesta proposta, não é necessário criar tabelas específicas para essas consultas: os indicadores podem ser obtidos dos registros existentes.
+
+Essas informações pertencem ao Evolift e não dependem da disponibilidade da API externa wger.
 
 ## Observação sobre arquivos anteriores
 
-Os arquivos `docs/modelagem/banco-de-dados/diagrama-er.pdf` e `docs/modelagem/banco-de-dados/modelo-logico.pdf` que já estavam no repositório representam **reservas de laboratórios** (usuários, laboratórios, reservas e equipamentos), não o Evolift. Foram preservados sem alteração por já existirem, mas não devem ser usados como modelo do projeto. Este documento e seu diagrama são a proposta correspondente ao escopo atual.
+Os PDFs `docs/modelagem/banco-de-dados/diagrama-er.pdf` e `docs/modelagem/banco-de-dados/modelo-logico.pdf` herdados do template original apresentam um sistema de **reservas de laboratórios**, e não o Evolift. Eles não devem ser utilizados na entrega como representação do modelo atual. O documento e o diagrama desta pasta descrevem a proposta do Evolift para a Fase 1.

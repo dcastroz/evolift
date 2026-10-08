@@ -1,12 +1,16 @@
+
 erDiagram
-    USUARIO ||--o{ EXERCICIO : "cria"
+    USUARIO o|--o{ EXERCICIO : "cadastra"
     USUARIO ||--o{ TREINO : "organiza"
     USUARIO ||--o{ SESSAO_TREINO : "registra"
+
     TREINO ||--o{ TREINO_EXERCICIO : "compoe"
     EXERCICIO ||--o{ TREINO_EXERCICIO : "incluido"
+
     TREINO ||--o{ SESSAO_TREINO : "executado"
     SESSAO_TREINO ||--o{ SESSAO_EXERCICIO : "registra"
     EXERCICIO ||--o{ SESSAO_EXERCICIO : "realizado"
+
     TREINO_EXERCICIO o|--o{ SESSAO_EXERCICIO : "origem_opcional"
     SESSAO_EXERCICIO ||--o{ SERIE : "detalha"
 
@@ -14,21 +18,25 @@ erDiagram
         int id PK
         string email UK
         string nome
+        string perfil "usuario ou administrador"
+        boolean ativo
         datetime criado_em
     }
+
     EXERCICIO {
         int id PK
-        int usuario_id FK "nulo para catalogo compartilhado"
+        int usuario_id FK "nulo para geral e wger"
         string nome
         string descricao
         string grupo_muscular
         string equipamento
-        string origem "local ou wger"
-        int id_externo "nulo para local"
+        string origem "pessoal, geral ou wger"
+        int id_externo "apenas para wger"
         string licenca_origem
         string url_licenca
         string autor_origem
     }
+
     TREINO {
         int id PK
         int usuario_id FK
@@ -36,18 +44,23 @@ erDiagram
         datetime criado_em
         datetime atualizado_em
     }
+
     TREINO_EXERCICIO {
         int id PK
         int treino_id FK
         int exercicio_id FK
         int posicao
     }
+
     SESSAO_TREINO {
         int id PK
         int usuario_id FK
         int treino_id FK
-        datetime realizado_em
+        datetime iniciado_em
+        datetime finalizado_em "nulo durante a sessao"
+        string status "em_andamento ou concluida"
     }
+
     SESSAO_EXERCICIO {
         int id PK
         int sessao_treino_id FK
@@ -55,6 +68,7 @@ erDiagram
         int treino_exercicio_id FK "opcional"
         int posicao
     }
+
     SERIE {
         int id PK
         int sessao_exercicio_id FK
