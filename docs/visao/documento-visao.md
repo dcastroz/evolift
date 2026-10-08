@@ -48,6 +48,10 @@ A aplicação poderá ser utilizada tanto por quem começou a treinar recentemen
 
 ## 5. Stakeholders
 
+### Administrador
+
+Responsável por gerenciar o catálogo geral de exercícios e as contas cadastradas no Evolift. O administrador terá permissões diferentes das de um usuário comum e não terá acesso automático ao histórico pessoal de treinos.
+
 ### Usuário
 
 Pessoa que utilizará o Evolift para criar seus treinos, registrar seus resultados e consultar o histórico.
@@ -68,17 +72,21 @@ Responsável por acompanhar e avaliar o trabalho desenvolvido pelo grupo.
 
 Dentro do escopo inicial do Evolift estão:
 
-- cadastro e gerenciamento de exercícios;
-- criação de treinos;
-- inclusão de exercícios nos treinos;
-- registro de séries, repetições e cargas;
-- registro dos treinos realizados;
-- consulta ao histórico;
-- busca de exercícios e treinos;
-- acompanhamento da evolução;
-- geração de relatórios;
-- disponibilização de alguns dados através de uma API REST;
-- utilização de uma API externa relacionada ao contexto do sistema.
+- Cadastro e gerenciamento de exercícios;
+- Criação de treinos;
+- Inclusão de exercícios nos treinos;
+- Registro de séries, repetições e cargas;
+- Registro dos treinos realizados;
+- Consulta ao histórico;
+- Busca de exercícios e treinos;
+- Acompanhamento da evolução;
+- Geração de relatórios;
+- Disponibilização de alguns dados através de uma API REST;
+- Utilização de uma API externa relacionada ao contexto do sistema.
+- Cadastro de exercícios personalizados pelos usuários;
+- Consulta ao catálogo externo de exercícios da wger;
+- Gerenciamento do catálogo geral de exercícios pelo administrador;
+- Gerenciamento das contas cadastradas pelo administrador.
 
 ---
 
@@ -102,7 +110,7 @@ Essas funcionalidades não fazem parte da proposta inicial do Evolift e aumentar
 
 ### F01 — Gerenciar exercícios
 
-Permitir cadastrar, consultar, editar e excluir exercícios.
+Permitir que o usuário cadastre, consulte, edite e exclua seus próprios exercícios personalizados.
 
 ### F02 — Gerenciar treinos
 
@@ -114,7 +122,7 @@ Permitir escolher quais exercícios fazem parte de cada treino.
 
 ### F04 — Registrar treino realizado
 
-Permitir registrar que um treino foi realizado pelo usuário.
+Permitir que o usuário inicie e conclua uma sessão de treino, registrando os exercícios realizados e os horários de início e término.
 
 ### F05 — Registrar desempenho
 
@@ -134,15 +142,23 @@ Permitir comparar informações dos treinos ao longo do tempo.
 
 ### F09 — Gerar relatório
 
-Apresentar informações resumidas sobre os treinos registrados.
+Apresentar informações resumidas sobre os treinos realizados. Ao concluir uma sessão, o sistema também deverá gerar um resumo com duração, exercícios e séries registrados.
 
 ### F10 — API REST
 
 Disponibilizar alguns dados do Evolift através de uma API REST.
 
-### F11 — Integração com API externa
+### F11 — Consultar catálogo externo
 
-Utilizar dados de uma API externa em uma funcionalidade útil para o usuário.
+Utilizar a API wger para consultar exercícios disponíveis, apresentando informações como nome, grupo muscular, equipamento e descrição, quando disponíveis.
+
+### F12 — Gerenciar catálogo geral
+
+Permitir que o administrador cadastre, consulte, edite e gerencie os exercícios do catálogo geral do Evolift.
+
+### F13 — Gerenciar usuários
+
+Permitir que o administrador consulte as contas cadastradas e controle sua situação de acesso.
 
 ---
 
@@ -185,12 +201,16 @@ Utilizar dados de uma API externa em uma funcionalidade útil para o usuário.
 
 Para a proposta definida na Fase 1, esperamos que o Evolift tenha um planejamento capaz de permitir:
 
-- organização dos treinos do usuário;
-- cadastro e consulta de exercícios;
-- registro de séries, repetições e cargas;
-- consulta ao histórico de treinos;
-- acompanhamento da evolução;
-- geração de pelo menos um relatório;
-- definição de uma API REST própria;
-- definição de uma integração útil com uma API externa;
-- coerência entre os casos de uso, arquitetura, modelo de dados, APIs e demais documentos da Fase 1.
+- Organização dos treinos do usuário;
+- Cadastro e consulta de exercícios;
+- Registro de séries, repetições e cargas;
+- Consulta ao histórico de treinos;
+- Acompanhamento da evolução;
+- Geração de pelo menos um relatório;
+- Definição de uma API REST própria;
+- Definição de uma integração útil com uma API externa;
+- Coerência entre os casos de uso, arquitetura, modelo de dados, APIs e demais documentos da Fase 1.
+- O usuário poderá cadastrar exercícios personalizados e consultar exercícios do catálogo externo;
+- As sessões de treino terão registros de início, conclusão, séries, repetições e cargas;
+- O planejamento deverá permitir a geração de um resumo ao concluir cada sessão;
+- As funcionalidades administrativas terão permissões próprias, separadas das funções do usuário comum.
