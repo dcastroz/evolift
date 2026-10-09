@@ -6,39 +6,9 @@
 
 O Evolift será uma aplicação web responsiva. O navegador apresenta a interface em HTML, CSS e JavaScript; o backend Django concentra autenticação, regras de negócio e acesso aos dados; um banco relacional armazena as informações próprias do usuário. Uma integração isolada consulta o catálogo público de exercícios do wger.
 
-```mermaid
-flowchart LR
-    usuario[Usuário]
-    administrador[Administrador]
+![Diagrama da arquitetura do Evolift](./diagrama-arquitetura.png)
 
-    navegador[Navegador<br/>HTML · CSS · JavaScript]
-    interface[Interface web<br/>treinos · histórico · administração]
-    django[Backend Django<br/>autenticação · permissões · regras]
-
-    modulos[Módulos do domínio<br/>contas · exercícios · treinos<br/>sessões · evolução · relatórios]
-    rest[API REST Evolift<br/>contrato /api/v1]
-    resumo[Resumo automático<br/>ao concluir sessão]
-
-    banco[(Banco relacional<br/>tecnologia a definir)]
-    adaptador[Adaptador wger<br/>consulta e cache do catálogo]
-    wger[API pública wger<br/>catálogo de exercícios]
-
-    usuario --> navegador
-    administrador --> navegador
-    navegador <--> interface
-    interface <--> django
-    interface --> rest
-    django <--> modulos
-    rest <--> modulos
-    modulos <--> banco
-    modulos --> resumo
-    resumo --> banco
-    modulos <--> adaptador
-    adaptador <--> wger
-
-```
-
-O diagrama editável está em [`diagrama-arquitetura.mmd`](./diagrama-arquitetura.mmd) e a visualização PNG em [`diagrama-arquitetura.png`](./diagrama-arquitetura.png).
+O diagrama da arquitetura planejada do Evolift está disponível em [PNG](./diagrama-arquitetura.png) e [SVG](./diagrama-arquitetura.svg).
 
 ## Responsabilidades das partes
 

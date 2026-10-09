@@ -2,82 +2,17 @@
 
 > Modelo lógico proposto para a Fase 1. Este documento descreve a estrutura planejada, sem criar ou configurar um banco de dados. O banco relacional e os tipos físicos serão definidos antes da implementação.
 
+
 ## Diagrama entidade-relacionamento
 
-O arquivo editável do diagrama é [`diagrama-er.mmd`](./diagrama-er.mmd), e a versão para visualização está em [`diagrama-er.png`](./diagrama-er.png).
+O diagrama apresenta as sete entidades principais do Evolift, seus atributos e os relacionamentos entre usuários, exercícios, treinos e sessões realizadas.
 
-```mermaid
-erDiagram
-    USUARIO ||--o{ EXERCICIO : "cria"
-    USUARIO ||--o{ TREINO : "organiza"
-    USUARIO ||--o{ SESSAO_TREINO : "registra"
-    TREINO ||--o{ TREINO_EXERCICIO : "compoe"
-    EXERCICIO ||--o{ TREINO_EXERCICIO : "incluido"
-    TREINO ||--o{ SESSAO_TREINO : "executado"
-    SESSAO_TREINO ||--o{ SESSAO_EXERCICIO : "registra"
-    EXERCICIO ||--o{ SESSAO_EXERCICIO : "realizado"
-    TREINO_EXERCICIO o|--o{ SESSAO_EXERCICIO : "origem_opcional"
-    SESSAO_EXERCICIO ||--o{ SERIE : "detalha"
+![Diagrama entidade-relacionamento do Evolift](./diagrama-er.png)
 
-    USUARIO {
-        int id PK
-        string email UK
-        string nome
-        string perfil "usuario ou administrador"
-        boolean ativo
-        datetime criado_em
-    }
-    EXERCICIO {
-        int id PK
-        int usuario_id FK "nulo para catalogo compartilhado"
-        string nome
-        string descricao
-        string grupo_muscular
-        string equipamento
-        string origem "pessoal, geral ou wger"
-        int id_externo "nulo para exercicios locais"
-        string licenca_origem
-        string url_licenca
-        string autor_origem
-    }
-    TREINO {
-        int id PK
-        int usuario_id FK
-        string nome
-        datetime criado_em
-        datetime atualizado_em
-    }
-    TREINO_EXERCICIO {
-        int id PK
-        int treino_id FK
-        int exercicio_id FK
-        int posicao
-    }
-    SESSAO_TREINO {
-        int id PK
-        int usuario_id FK
-        int treino_id FK
-        datetime iniciado_em
-        datetime finalizado_em
-        string status "em_andamento ou concluida"
-    }
-    SESSAO_EXERCICIO {
-        int id PK
-        int sessao_treino_id FK
-        int exercicio_id FK
-        int treino_exercicio_id FK "opcional"
-        int posicao
-    }
-    SERIE {
-        int id PK
-        int sessao_exercicio_id FK
-        int numero
-        int repeticoes
-        decimal carga_kg
-    }
-```
+O diagrama também está disponível em [PNG](./diagrama-er.png) e [SVG](./diagrama-er.svg). O modelo conceitual completo, em PDF, está disponível em [Diagrama ER](../modelagem/banco-de-dados/diagrama-er.pdf).
 
 ## Entidades e atributos
+
 
 | Entidade | Atributos principais | Chaves e observações |
 |---|---|---|
@@ -124,7 +59,3 @@ O **resumo da sessão** é gerado automaticamente ao finalizar um treino, com a 
 A **evolução** e os **relatórios de desempenho** são calculados com base em `SessaoTreino`, `SessaoExercicio` e `Serie`. Nesta proposta, não é necessário criar tabelas específicas para essas consultas: os indicadores podem ser obtidos dos registros existentes.
 
 Essas informações pertencem ao Evolift e não dependem da disponibilidade da API externa wger.
-
-## Observação sobre arquivos anteriores
-
-Os PDFs `docs/modelagem/banco-de-dados/diagrama-er.pdf` e `docs/modelagem/banco-de-dados/modelo-logico.pdf` herdados do template original apresentam um sistema de **reservas de laboratórios**, e não o Evolift. Eles não devem ser utilizados na entrega como representação do modelo atual. O documento e o diagrama desta pasta descrevem a proposta do Evolift para a Fase 1.

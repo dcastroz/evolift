@@ -175,9 +175,10 @@ O conjunto de rotas e seus exemplos está no contrato da API. Nenhuma dessas rot
 
 ---
 
+
 ## 6. Organização dos diretórios
 
-Os principais arquivos da documentação estão organizados assim:
+A documentação do Evolift está organizada na pasta `docs/`, seguindo a estrutura de modelagem proposta pelo professor.
 
 ```text
 evolift/
@@ -192,15 +193,16 @@ evolift/
 │   │   │   ├── especificacoes-casos-de-uso.pdf
 │   │   │   └── diagrama-casos-de-uso.png
 │   │   ├── classes/
+│   │   │   └── diagrama-de-classes.pdf
 │   │   └── banco-de-dados/
+│   │       ├── diagrama-er.pdf
+│   │       └── modelo-logico.pdf
 │   ├── arquitetura/
 │   │   ├── arquitetura.md
-│   │   ├── diagrama-arquitetura.mmd
 │   │   ├── diagrama-arquitetura.png
 │   │   └── diagrama-arquitetura.svg
 │   ├── banco-de-dados/
 │   │   ├── modelo-de-dados.md
-│   │   ├── diagrama-er.mmd
 │   │   ├── diagrama-er.png
 │   │   └── diagrama-er.svg
 │   ├── api/
@@ -213,9 +215,10 @@ evolift/
     └── semaforo.png
 ```
 
-A pasta `docs/modelagem/` foi mantida por fazer parte do modelo fornecido pelo professor. Seus PDFs herdados precisam ser conferidos antes da entrega para garantir que representem o Evolift, e não os exemplos do template. O arquivo editável do diagrama de casos de uso também deverá acompanhar a versão em PNG.
+A pasta `docs/modelagem/` reúne os documentos de modelagem solicitados no template do professor, incluindo casos de uso, diagrama de classes, modelo conceitual e modelo lógico.
 
----
+Os PDFs representam os diagramas do Evolift. As imagens em PNG e SVG são utilizadas para facilitar a visualização dos modelos na documentação.
+
 
 ## 7. Participantes
 
@@ -307,15 +310,32 @@ A identificação final da entrega poderá ser registrada por commit ou tag apó
 
 ---
 
+
 ## 14. Limitações e próximos passos
 
 ### Limitações atuais
 
 - A aplicação ainda não foi implementada, executada ou testada funcionalmente.
-- As rotas da API são propostas, e não serviços disponíveis.
-- Os protótipos representam as telas previstas, sem interação real com banco ou backend.
-- A escolha específica do banco relacional e detalhes de implantação ainda estão pendentes.
-- Os arquivos herdados do template na pasta `docs/modelagem/` precisam de conferência final para que não permaneçam exemplos de outro projeto.
+- As rotas da API REST são propostas documentadas, e não serviços disponíveis.
+- Os protótipos representam as telas planejadas, sem integração real com o backend ou banco de dados.
+- O banco de dados relacional específico ainda será definido.
+- A integração com a API externa wger está planejada, mas ainda não foi implementada.
+
+### Próximos passos para concluir a Fase 1
+
+- [x] Elaborar o Documento de Visão.
+- [x] Elaborar os casos de uso e suas especificações.
+- [x] Definir a arquitetura planejada.
+- [x] Elaborar o modelo conceitual e o modelo lógico de dados.
+- [x] Elaborar o diagrama de classes UML.
+- [x] Documentar a API REST e a integração com a wger.
+- [x] Produzir os protótipos das telas principais.
+- [x] Substituir os PDFs de exemplo do professor pelos documentos do Evolift.
+- [ ] Conferir os links e a consistência final da documentação.
+- [ ] Realizar a revisão final com os integrantes do grupo.
+- [ ] Integrar a documentação revisada à branch principal.
+
+A implementação com Django, a configuração do banco de dados e os testes funcionais pertencem às próximas etapas do projeto.
 
 ### Próximos passos para concluir a Fase 1
 
