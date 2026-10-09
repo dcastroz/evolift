@@ -21,24 +21,24 @@ A divisão foi feita para organizar melhor o trabalho. Mesmo assim, os integrant
 
 ---
 
-## 3. Backlog da Fase 1
 
 | ID | Atividade | Responsável | Status |
 |---|---|---|---|
 | F1-01 | Criar e configurar o repositório GitHub | Davi Castro | Concluído |
 | F1-02 | Criar README inicial | Davi Castro | Concluído |
 | F1-03 | Elaborar Documento de Visão | Davi Castro | Concluído |
-| F1-04 | Elaborar planejamento do projeto | Davi Castro | Em andamento |
-| F1-05 | Elaborar diagrama de casos de uso | Lucas Porcedda | Pendente |
-| F1-06 | Elaborar especificações textuais dos casos de uso | Lucas Porcedda | Pendente |
-| F1-07 | Definir identidade visual do Evolift | Lucas Porcedda | Pendente |
-| F1-08 | Criar protótipos das telas principais | Lucas Porcedda | Pendente |
+| F1-04 | Elaborar planejamento do projeto | Davi Castro | Concluído |
+| F1-05 | Elaborar diagrama de casos de uso | Lucas Porcedda | Concluído |
+| F1-06 | Elaborar especificações textuais dos casos de uso | Lucas Porcedda | Concluído |
+| F1-07 | Definir identidade visual do Evolift | Lucas Porcedda | Concluído |
+| F1-08 | Criar protótipos das telas principais | Lucas Porcedda | Concluído |
 | F1-09 | Elaborar arquitetura da aplicação | Eduardo Moreira | Concluído |
 | F1-10 | Elaborar modelo de dados | Eduardo Moreira | Concluído |
 | F1-11 | Definir contrato inicial da API REST | Eduardo Moreira | Concluído |
 | F1-12 | Definir plano de integração com API externa | Eduardo Moreira | Concluído |
-| F1-13 | Revisar a documentação e conferir se as partes estão de acordo entre si | Todos | Pendente |
+| F1-13 | Revisar a documentação e conferir se as partes estão de acordo entre si | Todos | Em andamento |
 | F1-14 | Atualizar o README para a entrega da Fase 1 | Todos | Pendente |
+
 
 ---
 

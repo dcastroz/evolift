@@ -42,20 +42,16 @@ Se durante a criação dos protótipos ela não combinar com o resultado esperad
 
 ---
 
+
 ## 5. Logotipo
 
-O logotipo do Evolift ainda será desenhado.
+Para o Evolift, foi criada uma proposta de logotipo que acompanha a identidade visual definida para o projeto.
 
-A ideia inicial é utilizar o nome **Evolift** acompanhado de um símbolo simples relacionado à proposta do sistema.
+A marca utiliza o nome Evolift com um símbolo gráfico relacionado ao universo fitness, seguindo a combinação de verde-limão e tons escuros.
 
-Algumas ideias consideradas para o símbolo são:
+O logotipo aparece nos protótipos das telas, principalmente na área de acesso, ajudando a manter uma identidade consistente na aplicação.
 
-- um halter;
-- uma barra de musculação;
-- uma seta representando evolução;
-- a letra `E` estilizada.
-
-O logotipo deverá funcionar principalmente sobre fundos escuros e utilizar branco e verde como cores principais.
+A proposta visual poderá receber pequenos ajustes durante o desenvolvimento, caso seja necessário.
 
 ---
 
@@ -78,23 +74,28 @@ O objetivo é deixar as telas fáceis de entender e combinar com o tema de muscu
 
 ---
 
+
 ## 7. Telas principais
 
-A identidade visual será usada nos protótipos das principais telas do Evolift.
+Durante a Fase 1, foram elaborados oito protótipos para representar as principais telas do Evolift.
 
-Inicialmente estão previstas:
+As telas criadas foram:
 
-- Login;
-- Cadastro;
-- Dashboard;
-- Meus Treinos;
-- Detalhes do Treino;
-- Registro de Treino;
-- Histórico;
-- Evolução;
-- Relatórios.
+- **Login:** acesso à conta do usuário.
+- **Cadastro:** criação de uma nova conta.
+- **Dashboard:** visão geral dos treinos e atividades.
+- **Meus Treinos:** listagem e organização dos treinos cadastrados.
+- **Detalhes do Treino:** visualização dos exercícios de um treino.
+- **Registrar Treino:** registro de séries, repetições e cargas.
+- **Histórico:** consulta aos treinos realizados anteriormente.
+- **Evolução:** acompanhamento do desempenho ao longo do tempo.
 
-A quantidade de telas poderá ser ajustada durante a criação dos protótipos caso alguma delas possa ser agrupada ou seja necessário adicionar uma nova tela.
+Os protótipos estão disponíveis nesta pasta, em formato PNG.
+
+A funcionalidade de relatórios também faz parte do escopo do sistema, mas não possui uma tela própria entre os oito protótipos produzidos nesta etapa.
+
+Os protótipos representam o planejamento visual da aplicação. As telas ainda não foram implementadas.
+
 
 ---
 
