@@ -337,15 +337,6 @@ A identificação final da entrega poderá ser registrada por commit ou tag apó
 
 A implementação com Django, a configuração do banco de dados e os testes funcionais pertencem às próximas etapas do projeto.
 
-### Próximos passos para concluir a Fase 1
-
-- [ ] Conferir os PDFs de modelagem herdados do template e substituir exemplos que não sejam do Evolift.
-- [ ] Garantir que os diagramas tenham versões editáveis e versões de visualização.
-- [ ] Revisar as referências e a consistência dos documentos.
-- [ ] Integrar a documentação revisada à branch principal depois da conferência do grupo.
-
-A implementação com Django e os testes funcionais pertencem a uma etapa posterior e não fazem parte desta entrega.
-
 ---
 
 ## 15. Licença, referências e contato

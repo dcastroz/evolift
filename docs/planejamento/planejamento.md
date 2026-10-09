@@ -38,7 +38,7 @@ A divisão foi feita para organizar melhor o trabalho. Mesmo assim, os integrant
 | F1-11 | Definir contrato inicial da API REST | Eduardo Moreira | Concluído |
 | F1-12 | Definir plano de integração com API externa | Eduardo Moreira | Concluído |
 | F1-13 | Revisar a documentação e conferir se as partes estão de acordo entre si | Todos | Em andamento |
-| F1-14 | Atualizar o README para a entrega da Fase 1 | Todos | Pendente |
+| F1-14 | Atualizar o README para a entrega da Fase 1 | Todos | Concluído |
 
 
 ---
