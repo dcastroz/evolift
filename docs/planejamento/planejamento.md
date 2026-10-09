@@ -28,17 +28,18 @@ A divisão foi feita para organizar melhor o trabalho. Mesmo assim, os integrant
 | F1-01 | Criar e configurar o repositório GitHub | Davi Castro | Concluído |
 | F1-02 | Criar README inicial | Davi Castro | Concluído |
 | F1-03 | Elaborar Documento de Visão | Davi Castro | Concluído |
-| F1-04 | Elaborar planejamento do projeto | Davi Castro | Em andamento |
-| F1-05 | Elaborar diagrama de casos de uso | Lucas Porcedda | Pendente |
-| F1-06 | Elaborar especificações textuais dos casos de uso | Lucas Porcedda | Pendente |
-| F1-07 | Definir identidade visual do Evolift | Lucas Porcedda | Pendente |
-| F1-08 | Criar protótipos das telas principais | Lucas Porcedda | Pendente |
+| F1-04 | Elaborar planejamento do projeto | Davi Castro | Concluído |
+| F1-05 | Elaborar diagrama de casos de uso | Lucas Porcedda | Concluído |
+| F1-06 | Elaborar especificações textuais dos casos de uso | Lucas Porcedda | Concluído |
+| F1-07 | Definir identidade visual do Evolift | Lucas Porcedda | Concluído |
+| F1-08 | Criar protótipos das telas principais | Lucas Porcedda | Concluído |
 | F1-09 | Elaborar arquitetura da aplicação | Eduardo Moreira | Concluído |
 | F1-10 | Elaborar modelo de dados | Eduardo Moreira | Concluído |
 | F1-11 | Definir contrato inicial da API REST | Eduardo Moreira | Concluído |
 | F1-12 | Definir plano de integração com API externa | Eduardo Moreira | Concluído |
-| F1-13 | Revisar a documentação e conferir se as partes estão de acordo entre si | Todos | Pendente |
-| F1-14 | Atualizar o README para a entrega da Fase 1 | Todos | Pendente |
+| F1-13 | Revisar a documentação e conferir se as partes estão de acordo entre si | Todos | Em andamento |
+| F1-14 | Atualizar o README para a entrega da Fase 1 | Todos | Concluído |
+
 
 ---
 
@@ -76,7 +77,7 @@ A divisão foi feita para organizar melhor o trabalho. Mesmo assim, os integrant
 
 - Conferir os documentos produzidos.
 - Conferir os diagramas.
-- Verificar se os arquivos editáveis dos diagramas também estão no repositório.
+- Conferir se os diagramas estão disponíveis em PDF ou imagem e se representam corretamente o Evolift.
 - Verificar se visão, casos de uso, arquitetura, modelo de dados e APIs estão de acordo entre si.
 
 ### Marco 6 — Entrega da Fase 1
@@ -99,7 +100,8 @@ Como vários documentos dependem uns dos outros, o grupo deverá manter as mesma
 
 Antes da entrega, os três integrantes farão uma revisão geral do repositório para conferir se não existem informações diferentes entre os documentos e se todos os itens pedidos na Fase 1 estão presentes.
 
-Os diagramas também deverão ser enviados em formato editável e em um formato de fácil visualização, como PDF, PNG ou SVG.
+Os diagramas serão disponibilizados em PDF, conforme a estrutura do template do professor. Também poderão ser utilizadas imagens em PNG ou SVG para facilitar a visualização na documentação.
+
 
 ---
 
@@ -112,7 +114,8 @@ Os diagramas também deverão ser enviados em formato editável e em um formato 
 | Mudanças no escopo durante a Fase 1 | Média | Médio | Atualizar os documentos que forem afetados |
 | Dificuldade para escolher uma API externa adequada | Média | Médio | Comparar as opções antes de fechar a integração |
 | Conflitos ou perda de alterações no GitHub | Baixa | Médio | Fazer commits frequentes e atualizar o repositório antes de trabalhar |
-| Falta de algum arquivo editável dos diagramas | Baixa | Médio | Conferir todos os arquivos durante a revisão final |
+| Diagrama ilegível ou desatualizado | Baixa | Médio | Conferir os PDFs e as imagens antes da entrega |
+
 
 ---
 
