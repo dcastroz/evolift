@@ -331,9 +331,9 @@ A identificação final da entrega poderá ser registrada por commit ou tag apó
 - [x] Documentar a API REST e a integração com a wger.
 - [x] Produzir os protótipos das telas principais.
 - [x] Substituir os PDFs de exemplo do professor pelos documentos do Evolift.
-- [ ] Conferir os links e a consistência final da documentação.
-- [ ] Realizar a revisão final com os integrantes do grupo.
-- [ ] Integrar a documentação revisada à branch principal.
+- [x] Conferir os links e a consistência final da documentação.
+- [x] Realizar a revisão final com os integrantes do grupo.
+- [x] Integrar a documentação revisada à branch principal.
 
 A implementação com Django, a configuração do banco de dados e os testes funcionais pertencem às próximas etapas do projeto.
 
